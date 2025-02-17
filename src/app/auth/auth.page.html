@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ title() }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <router-outlet/>
+    </ion-card-content>
+    <div class="btn-redirect-container">
+      @if( showRegisterButton() ){
+        <ion-button routerLink="/auth/register" fill="clear">No tienes cuenta? Registrate</ion-button>
+      }@else {
+        <ion-button routerLink="/auth/login" fill="clear">Tienes cuenta? Inicia sesión</ion-button>
+      }
+    </div>
+  </ion-card>
+</ion-content>

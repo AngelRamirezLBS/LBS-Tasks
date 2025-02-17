@@ -1,0 +1,28 @@
+ion-card {
+  margin: 16px;
+  border: 1px solid #6030ff;
+  box-shadow: 0px 2px 8px #592f5dba;
+}
+
+ion-card-title {
+  font-size: 1.2em;
+}
+
+ion-card-subtitle {
+  font-size: 0.9em;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+ion-card-content {
+  font-size: 1em;
+}
+
+.btns-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  column-gap: 24px;
+  margin-bottom: 20px;
+}

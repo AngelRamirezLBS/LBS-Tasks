@@ -1,0 +1,26 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle
+      >{{ task().dueDate | date }}
+      <ion-chip [color]="getStatusColor(task().status)">
+        <ion-label>{{ task().status | taskStatus }}</ion-label>
+      </ion-chip></ion-card-subtitle
+    >
+    <ion-card-title>{{ task().title }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>{{ task().description }}</p>
+  </ion-card-content>
+
+  @if (isMobile()) {
+    <div class="btns-container">
+      <ion-button fill="outline" color="tertiary" (click)="editTask()">
+        Editar
+      </ion-button>
+      <ion-button fill="outline" color="danger" (click)="deleteTask()">
+        Eliminar
+      </ion-button>
+    </div>
+  }
+</ion-card>

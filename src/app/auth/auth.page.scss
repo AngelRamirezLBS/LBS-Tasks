@@ -1,0 +1,25 @@
+ion-content {
+    width: 100%;
+}
+
+ion-router-outlet {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+ion-card {
+    width: min(600px, 90%);
+    margin: 0 auto;
+    margin-top: 78px;
+}
+
+ion-card-content {
+    height: fit-content;
+}
+
+.btn-redirect-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}

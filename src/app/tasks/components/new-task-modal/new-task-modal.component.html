@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ title }} tarea</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="cancel()">Cerrar</ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [disabled]="taskForm.invalid"
+        >Confirmar</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="taskForm">
+    @for (formField of formFields(); track $index) {
+    <shared-form-field
+      [form]="taskForm"
+      [controlName]="formField.controlName"
+      [label]="formField.label"
+      [type]="formField.type"
+    />
+    <shared-error-message
+      [form]="taskForm"
+      [controlName]="formField.controlName"
+    />
+    }
+    <hr />
+    <ion-label>Fecha de entrega</ion-label>
+    <ion-datetime
+      presentation="date"
+      formControlName="dueDate"
+      displayFormat="DD/MM/YYYY"
+      [min]="minDate()"
+    />
+    <ion-item>
+      <ion-label>Estatus:</ion-label>
+      <ion-select [value]="taskForm.value['status']" formControlName="status">
+        <ion-select-option value="pending">Pendiente</ion-select-option>
+        <ion-select-option value="in_progress">En progreso</ion-select-option>
+        <ion-select-option value="completed">Completado</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </form>
+</ion-content>

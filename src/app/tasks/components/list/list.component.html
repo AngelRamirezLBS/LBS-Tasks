@@ -1,0 +1,10 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Listado de tareas</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+      @for (task of taskList(); track $index) {
+        <card-task [task]="task" (edit)="onEditTask($event)" (delete)="onDeleteTask($event)"/>
+      }
+  </ion-card-content>
+</ion-card>

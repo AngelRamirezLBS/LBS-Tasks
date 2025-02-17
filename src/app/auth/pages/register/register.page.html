@@ -1,0 +1,21 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  @for (formField of formFields(); track $index) {
+    <shared-form-field
+      [form]="registerForm"
+      [controlName]="formField.controlName"
+      [label]="formField.label"
+      [type]="formField.type"
+    />
+    <shared-error-message [form]="registerForm" [controlName]="formField.controlName" />
+  }
+
+  <ion-button
+    expand="full"
+    shape="round"
+    type="submit"
+    [disabled]="registerForm.invalid"
+    class="ion-margin-top"
+  >
+    Registrarse
+  </ion-button>
+</form>
