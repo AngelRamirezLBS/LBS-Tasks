@@ -2,6 +2,5 @@ import { Environment } from './environment.interface';
 
 export const environment: Environment = {
   production: false,
-  baseURL: 'http://localhost:5050'
+  baseURL: 'https://dev.alfalbs.app/ApiOmega'
 };
-
