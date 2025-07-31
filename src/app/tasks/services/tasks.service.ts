@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, computed, inject, signal } from '@angular/core';
 import { CreateTask, TaskData, UpdateTask } from '../interfaces/tasks.interface';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.dev';
 import { Observable, map } from 'rxjs';
 
 @Injectable({
@@ -19,7 +19,7 @@ export class TasksService {
   public createTask(body: CreateTask): Observable<TaskData> {
     return this.http.post<TaskData>(this.tasksURL, body);
   }
-  
+
   public updateTask(body: UpdateTask, id: string): Observable<TaskData> {
     return this.http.put<TaskData>(`${this.tasksURL}/${id}`, body);
   }
